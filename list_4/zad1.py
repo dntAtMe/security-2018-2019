@@ -9,12 +9,17 @@ def most_common(lst):
 def bits2string(b=None):
     return ''.join([chr(int(x, 2)) for x in b])
 
+def fun(lst):
+    letters = string.ascii_lowercase
+
+
+
 def main():
     l = int(input("no. of messages: "))
     msgs = []
     for i in range (0, l):
         msgs.append( input(str(i) + ": ").replace(" ", "") )
-
+    target =  input("target: ").replace(" ", "")
     maxlen = max([len(m) // 8 for m in msgs])
     helper = []
     for i in range(0, l):
@@ -63,11 +68,13 @@ def main():
     print((key))
     print( format( int(key, 2) ^ int(msgs[0], 2), 'b' ) )
 
-    for i in range(0, min( len(key), len(msgs[0]) ), 8):
-        xored = int(key[i:i+8], 2) ^ int(msgs[0][i:i+8], 2)
+    output = []
+    for i in range(0, min( len(key), len(target) ), 8):
+        xored = int(key[i:i+8], 2) ^ int(target[i:i+8], 2)
         xored_str = format(xored, 'b').zfill(8)
-        print( chr(int(xored_str, 2)))
+        output.append( chr( int( xored_str, 2 ) ) )
 
+    print(*output, sep='')
 
 if __name__ == "__main__":
     main()
