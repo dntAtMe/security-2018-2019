@@ -56,13 +56,17 @@ def main():
     filtered = []
     for bidx in range(0, maxlen):
         filtered.append([])
-        filtered[bidx] = [helper_bytes[bidx][i] for i in range(0, len(helper_bytes[bidx])) if chr(int(helper_bytes[bidx][i], 2)) in string.hexdigits]
+        filtered[bidx] = [helper_bytes[bidx][i] for i in range(0, len(helper_bytes[bidx])) if chr(int(helper_bytes[bidx][i], 2)) in string.ascii_letters or chr(int(helper_bytes[bidx][i], 2)) in string.digits]
     print(filtered)
 
-    key = ''.join( [ most_common(filtered[bidx]) for bidx in range(0, maxlen) ] )
+    key = ''.join( [ most_common(helper_bytes[bidx]) for bidx in range(0, maxlen) ] )
     print((key))
     print( format( int(key, 2) ^ int(msgs[0], 2), 'b' ) )
 
+    for i in range(0, min( len(key), len(msgs[0]) ), 8):
+        xored = int(key[i:i+8], 2) ^ int(msgs[0][i:i+8], 2)
+        xored_str = format(xored, 'b').zfill(8)
+        print( chr(int(xored_str, 2)))
 
 
 if __name__ == "__main__":
