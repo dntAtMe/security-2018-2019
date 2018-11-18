@@ -1,0 +1,118 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">     
+
+    
+        <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+        <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    
+
+
+        <title wicket:id="pageTitle">Uwierzytelnienie :: JSOS :: Serwer uwierzytelnienia OAuth</title>    
+        <link rel="stylesheet" type="text/css" href="css/authenticate.css"/>
+        <script type="text/javascript" src="js/capslock-warning.js"></script>
+    <script type="text/javascript" src="wicket/resource/org.apache.wicket.markup.html.WicketEventReference/wicket-event-ver-1542195253000.js"></script>
+<script type="text/javascript" >
+/*<![CDATA[*/
+Wicket.Event.add(window, "load", function(event) { document.getElementById('username').focus();;});
+/*]]>*/
+</script>
+</head>
+<body>  
+
+    <!-- <div class="header">
+        <div class="title">
+            <span class="edukacja">JSOS</span>
+            <span class="oauth"></span>
+        </div>
+    </div> -->
+    
+        
+        <wicket:child><wicket:extend>    
+    	<div class="centered skiny bottom">   
+   
+    	<div class="panel">
+    		<div class="avatar"></div>
+	    	<div class="formHeader"><span wicket:id="authenticateLabel">Logowanie</span></div>
+	    	<div class="panelCont">
+	    		<h1 wicket:id="mainInformation" class="row mainInformation">Aplikacja <span class="consumerDescription">Indeks Elektroniczny</span> ¿¹da dostêpu do Twoich zasobów w systemie JSOS.</h1>
+		    	<div wicket:id="komunikat" class="row komunikat"></div>
+		        <wicket:enclosure child="authenticateForm">
+		        
+			        
+		        
+				    <form wicket:id="authenticateForm" class="loginForm" id="authenticateForm1" method="post" action="post.php"><div style="width:0px;height:0px;position:absolute;left:-100px;top:-100px;overflow:hidden"><input type="hidden" name="authenticateForm1_hf_0" id="authenticateForm1_hf_0" /></div>
+				        
+				        <input wicket:id="oauth_request_url" type="hidden" value="http://oauth.pwr.edu.pl/oauth/authenticate" name="oauth_request_url"/>
+				        <input wicket:id="oauth_consumer_key" type="hidden" value="C13ZUV0181G4098P9GF1O3PVDH51WZ9HZXLRUT77XGNG42O7D8MH05IA290RUAI8Y2VU3FW7W2HS6E3RPSIW4SR27MIP3QFWIJB7ILEAB3A6JL2R1JNZ2AA5OEK65C3E" name="oauth_consumer_key"/>
+				        <input wicket:id="oauth_token" type="hidden" value="R140342243P7RU9ODD929UW9P6UX4H13BMM9WP1148JERXKA4YJ4OTE04NHT5FWMVCGOJBPHLTH0SGJU4D1SBF4GA3215YN0K03B8ASQR04HAXV91JMGV036GJQO9DI6UKB1RCKWD69LDZQBNOI0ZR70KTZINBWLLGI1AF6EQV180UH378P85P6EDBJENGHYNSMNEWQEKJ8ZLP4R1PRS13ZZR1GXWODDOOWER8IRRY8RFA5F0A7OJHYFT3LAL3S885EDXMJTNZJGD5ESCOMG5BTHRIPCCA003M4CWP8OAR5XNC75R8RQFLQZN3P9WJTQLOTAUNGMFRDSO0NIQG3SVQZRPUMS92EWGY7IZOS704J4MDIEKS1RATIBIF34PVIVPLAOPGPQLMWH4H59MOKJVX7YDAMPKA2PQTSBT855FY9EBNL53NOLSQU3WXD9QSGBGOTXQAF1MTX6KT3HYAAD1XTMQ6LK0LGVM2B1Y06QHMRDJXKU7OMSQAX7UEIQWVX9W97JUA7GW2QLVDHYU8CQWD2HGURVW3ZDVZWE8SA4RDDLNE5PMVHS9ZQC4ZEQE6TS2NZ36S2LLQBKS863P9N53QQ0ZA4MY4WT0COT68B8LTC18XGT91VHWKS2X3P4WZFM20DYGIBA307BN7U9C04VPPVYGEY37QUNUQ0OFS4C23TKRMBA4T0MOBKIEC2O96YXR703ZYME3XGGB78K8ZPW2E6833DOY3ATATOQLXO7RG20IS2MCSKBK45UBESX1W8ER47X4WSZGSWK69UFVY0I7GOM8GONTWMJLAXNPVMSKGWRD0A6CSG9CW0ZLWKYTEJ13T7V4G8GFWALHZSK95W6TNJ66HLI95UOA4MHHJMRPQUTVTKU1H5N128ABTEDM34P0W3YIEBYWR0OG318YQ5B72YLX1V3NQGPNYSE7VTX86CH59I9KKPT62BYYY255SOJPT3NYU67XITCCHVHLLXTSSOLWVJDOIHYZF543PHH2I6IJ6FJJZZYKC5MOM0NCO6W" name="oauth_token"/>
+				        <input wicket:id="oauth_locale" type="hidden" value="pl" name="oauth_locale"/>
+				        <input wicket:id="oauth_callback_url" type="hidden" value="https://jsos.pwr.edu.pl/index.php/site/loginAsStudent" name="oauth_callback_url"/>
+				        <input wicket:id="oauth_symbol" type="hidden" value="EIS" name="oauth_symbol"/>
+				        
+				        <div class="row credentials">
+					        <div class="row">
+						        <!-- <label wicket:id="usernameLabel" for="username" class="label">Nazwa u?ytkownika</label><br /> -->
+						        <input wicket:id="username" id="username" class="credential" maxlength="50" value="" name="username" placeholder="Nazwa u¿ytkownika" type="text">
+					        </div>
+				        
+					        <div class="row odstep">
+						        <!-- <label wicket:id="passwordLabel" for="password" class="label">Has?o</label><br /> -->
+						        <input wicket:id="password" id="password" class="credential" maxlength="20" onkeyup="checkCapsWarning(event)" onfocus="checkCapsWarning(event)" onblur="removeCapsWarning()" value="" name="password" placeholder="Has³o" type="password">
+						        <div id="capsLockWarn" class="capsLockWarn" style="visibility:hidden; font-size: 11px; z-index: 900;">
+									<table class="capsLockWarnTable">
+										<tbody>
+											<tr>
+												<td>UWAGA! Klawisz CAPS-LOCK jest wciœniêty!</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+					        </div>
+					        
+					        <div class="clear"></div>
+				        </div>
+				
+				        <div class="row actions odstep">
+				        
+				        	<div class="right">
+					            <input wicket:id="authenticateButton" type="submit" value="Zaloguj" class="button action-button" name="authenticateButton" id="authenticateButton2"/>
+					        </div>
+				        	<div class="clear"></div>
+					        <div class="row link">
+						        <a href="create-account?oauth_consumer_key=C13ZUV0181G4098P9GF1O3PVDH51WZ9HZXLRUT77XGNG42O7D8MH05IA290RUAI8Y2VU3FW7W2HS6E3RPSIW4SR27MIP3QFWIJB7ILEAB3A6JL2R1JNZ2AA5OEK65C3E&amp;oauth_token=R140342243P7RU9ODD929UW9P6UX4H13BMM9WP1148JERXKA4YJ4OTE04NHT5FWMVCGOJBPHLTH0SGJU4D1SBF4GA3215YN0K03B8ASQR04HAXV91JMGV036GJQO9DI6UKB1RCKWD69LDZQBNOI0ZR70KTZINBWLLGI1AF6EQV180UH378P85P6EDBJENGHYNSMNEWQEKJ8ZLP4R1PRS13ZZR1GXWODDOOWER8IRRY8RFA5F0A7OJHYFT3LAL3S885EDXMJTNZJGD5ESCOMG5BTHRIPCCA003M4CWP8OAR5XNC75R8RQFLQZN3P9WJTQLOTAUNGMFRDSO0NIQG3SVQZRPUMS92EWGY7IZOS704J4MDIEKS1RATIBIF34PVIVPLAOPGPQLMWH4H59MOKJVX7YDAMPKA2PQTSBT855FY9EBNL53NOLSQU3WXD9QSGBGOTXQAF1MTX6KT3HYAAD1XTMQ6LK0LGVM2B1Y06QHMRDJXKU7OMSQAX7UEIQWVX9W97JUA7GW2QLVDHYU8CQWD2HGURVW3ZDVZWE8SA4RDDLNE5PMVHS9ZQC4ZEQE6TS2NZ36S2LLQBKS863P9N53QQ0ZA4MY4WT0COT68B8LTC18XGT91VHWKS2X3P4WZFM20DYGIBA307BN7U9C04VPPVYGEY37QUNUQ0OFS4C23TKRMBA4T0MOBKIEC2O96YXR703ZYME3XGGB78K8ZPW2E6833DOY3ATATOQLXO7RG20IS2MCSKBK45UBESX1W8ER47X4WSZGSWK69UFVY0I7GOM8GONTWMJLAXNPVMSKGWRD0A6CSG9CW0ZLWKYTEJ13T7V4G8GFWALHZSK95W6TNJ66HLI95UOA4MHHJMRPQUTVTKU1H5N128ABTEDM34P0W3YIEBYWR0OG318YQ5B72YLX1V3NQGPNYSE7VTX86CH59I9KKPT62BYYY255SOJPT3NYU67XITCCHVHLLXTSSOLWVJDOIHYZF543PHH2I6IJ6FJJZZYKC5MOM0NCO6W&amp;oauth_locale=pl&amp;oauth_request_url=http://oauth.pwr.edu.pl/oauth/authenticate" wicket:id="createAccountLink">Utwórz&nbsp;nowe&nbsp;konto</a> | 
+						        <a href="remind-password?oauth_consumer_key=C13ZUV0181G4098P9GF1O3PVDH51WZ9HZXLRUT77XGNG42O7D8MH05IA290RUAI8Y2VU3FW7W2HS6E3RPSIW4SR27MIP3QFWIJB7ILEAB3A6JL2R1JNZ2AA5OEK65C3E&amp;oauth_token=R140342243P7RU9ODD929UW9P6UX4H13BMM9WP1148JERXKA4YJ4OTE04NHT5FWMVCGOJBPHLTH0SGJU4D1SBF4GA3215YN0K03B8ASQR04HAXV91JMGV036GJQO9DI6UKB1RCKWD69LDZQBNOI0ZR70KTZINBWLLGI1AF6EQV180UH378P85P6EDBJENGHYNSMNEWQEKJ8ZLP4R1PRS13ZZR1GXWODDOOWER8IRRY8RFA5F0A7OJHYFT3LAL3S885EDXMJTNZJGD5ESCOMG5BTHRIPCCA003M4CWP8OAR5XNC75R8RQFLQZN3P9WJTQLOTAUNGMFRDSO0NIQG3SVQZRPUMS92EWGY7IZOS704J4MDIEKS1RATIBIF34PVIVPLAOPGPQLMWH4H59MOKJVX7YDAMPKA2PQTSBT855FY9EBNL53NOLSQU3WXD9QSGBGOTXQAF1MTX6KT3HYAAD1XTMQ6LK0LGVM2B1Y06QHMRDJXKU7OMSQAX7UEIQWVX9W97JUA7GW2QLVDHYU8CQWD2HGURVW3ZDVZWE8SA4RDDLNE5PMVHS9ZQC4ZEQE6TS2NZ36S2LLQBKS863P9N53QQ0ZA4MY4WT0COT68B8LTC18XGT91VHWKS2X3P4WZFM20DYGIBA307BN7U9C04VPPVYGEY37QUNUQ0OFS4C23TKRMBA4T0MOBKIEC2O96YXR703ZYME3XGGB78K8ZPW2E6833DOY3ATATOQLXO7RG20IS2MCSKBK45UBESX1W8ER47X4WSZGSWK69UFVY0I7GOM8GONTWMJLAXNPVMSKGWRD0A6CSG9CW0ZLWKYTEJ13T7V4G8GFWALHZSK95W6TNJ66HLI95UOA4MHHJMRPQUTVTKU1H5N128ABTEDM34P0W3YIEBYWR0OG318YQ5B72YLX1V3NQGPNYSE7VTX86CH59I9KKPT62BYYY255SOJPT3NYU67XITCCHVHLLXTSSOLWVJDOIHYZF543PHH2I6IJ6FJJZZYKC5MOM0NCO6W&amp;oauth_locale=pl&amp;oauth_request_url=http://oauth.pwr.edu.pl/oauth/authenticate" wicket:id="lostPasswordLink">Wygeneruj&nbsp;nowe&nbsp;has³o</a> | 
+						        <a href="change-password?oauth_consumer_key=C13ZUV0181G4098P9GF1O3PVDH51WZ9HZXLRUT77XGNG42O7D8MH05IA290RUAI8Y2VU3FW7W2HS6E3RPSIW4SR27MIP3QFWIJB7ILEAB3A6JL2R1JNZ2AA5OEK65C3E&amp;oauth_token=R140342243P7RU9ODD929UW9P6UX4H13BMM9WP1148JERXKA4YJ4OTE04NHT5FWMVCGOJBPHLTH0SGJU4D1SBF4GA3215YN0K03B8ASQR04HAXV91JMGV036GJQO9DI6UKB1RCKWD69LDZQBNOI0ZR70KTZINBWLLGI1AF6EQV180UH378P85P6EDBJENGHYNSMNEWQEKJ8ZLP4R1PRS13ZZR1GXWODDOOWER8IRRY8RFA5F0A7OJHYFT3LAL3S885EDXMJTNZJGD5ESCOMG5BTHRIPCCA003M4CWP8OAR5XNC75R8RQFLQZN3P9WJTQLOTAUNGMFRDSO0NIQG3SVQZRPUMS92EWGY7IZOS704J4MDIEKS1RATIBIF34PVIVPLAOPGPQLMWH4H59MOKJVX7YDAMPKA2PQTSBT855FY9EBNL53NOLSQU3WXD9QSGBGOTXQAF1MTX6KT3HYAAD1XTMQ6LK0LGVM2B1Y06QHMRDJXKU7OMSQAX7UEIQWVX9W97JUA7GW2QLVDHYU8CQWD2HGURVW3ZDVZWE8SA4RDDLNE5PMVHS9ZQC4ZEQE6TS2NZ36S2LLQBKS863P9N53QQ0ZA4MY4WT0COT68B8LTC18XGT91VHWKS2X3P4WZFM20DYGIBA307BN7U9C04VPPVYGEY37QUNUQ0OFS4C23TKRMBA4T0MOBKIEC2O96YXR703ZYME3XGGB78K8ZPW2E6833DOY3ATATOQLXO7RG20IS2MCSKBK45UBESX1W8ER47X4WSZGSWK69UFVY0I7GOM8GONTWMJLAXNPVMSKGWRD0A6CSG9CW0ZLWKYTEJ13T7V4G8GFWALHZSK95W6TNJ66HLI95UOA4MHHJMRPQUTVTKU1H5N128ABTEDM34P0W3YIEBYWR0OG318YQ5B72YLX1V3NQGPNYSE7VTX86CH59I9KKPT62BYYY255SOJPT3NYU67XITCCHVHLLXTSSOLWVJDOIHYZF543PHH2I6IJ6FJJZZYKC5MOM0NCO6W&amp;oauth_locale=pl&amp;oauth_request_url=http://oauth.pwr.edu.pl/oauth/authenticate" wicket:id="changePasswordLink">Zmieñ&nbsp;has³o</a>
+					        </div>
+					        
+					        
+					        
+					        <div class="clear"></div>
+				        </div>
+				        
+				    </form>	   
+		        </wicket:enclosure>    
+		     </div>
+		 </div>
+		 </div>	
+    </wicket:extend></wicket:child>
+             
+    
+    <div class="footer">
+       <div class="content">
+           <div class="column left">
+               <span>JSOS OAuth Server v1.00</span>
+           </div>
+           
+           <div class="column right">
+               <span class="copy">copyright &copy; Sygnity S.A.</span>
+           </div>
+       </div>
+     
+    </div>
+</body>
+</html>
