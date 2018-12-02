@@ -1,0 +1,16 @@
+{% extends "banksite/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+	<h2> Dokonaj przelewu</h2>
+		<div class="content-section">
+			<form method="POST" name="payment">
+				<fieldset class="form-group">
+					{{ form|crispy }}
+				</fieldset>
+				<input type="hidden" name="confirmation" value="false"/>
+				<div class="form-group">
+	      	<button id="submit_button" class="btn btn-outline-info" type="submit">Make payment</button>
+	     	</div>
+			</form>
+		</div>
+{% endblock content %}

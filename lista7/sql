@@ -1,0 +1,7 @@
+SQL
+
+1 OR 1=1--
+1; SELECT * FROM sqlite_master;
+
+XSS
+<script> this.form.submit() </script>

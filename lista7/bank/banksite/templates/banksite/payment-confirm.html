@@ -1,0 +1,23 @@
+{% extends "banksite/base.html" %}
+{% block content %}
+	<h2> Potwierdzenie zapłaty </h2>
+	<form method='POST'>
+		<article class="media content-section">
+			<div class="media-body">
+				<input id="confirm" type = "hidden" name = "confirmed" value = False />
+				<p id="title" class="article-content" href="#">Tytuł: {{ title }}</p>
+				<input type = "hidden" name = "title" value = {{title | safe}} />
+				<p id="content" class="article-content">Komentarz: {{ content }}</p>
+				<input type = "hidden" name = "content" value = {{content }} />
+				<p id="value" class="article-content">Ilość: {{ value }}</p>
+				<input type = "hidden" name = "value" value = {{value}} />
+				<p id="account" class="article-content">Numer odbiorcy: {{ account }}</p>
+				<input type = "hidden" name = "account" value = {{account}} />
+				<input type = "hidden" name = "confirmation" value = "true" />
+			</div>
+		</article>
+		<div class="btn btn-outline-info" onclick="window.history.back()">Cofnij</div>
+		<button id="submit_button" class="btn btn-outline-info" type="submit">Potwierdź</button>
+
+	</form>
+{% endblock content %}
